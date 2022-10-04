@@ -4,10 +4,35 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+     <link rel="stylesheet" href="style.css">
+     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Timer</title>
   </head>
   <body>
-    <div id="app"></div>
+    <audio src="/alarm.mp3" id="alarm"></audio>
+    
+    <div id="main">
+        <div class="inputs-container">
+            <div class="input-timer">
+                <input id="hours" class="time-control" type="number" min=0 value="0" name="hours" />Hours
+            </div>
+            <div class="input-timer">
+                <input id="minutes" class="time-control" type="number" min=0 value="0" name="minutes">Minutes
+            </div>
+            <div class="input-timer">
+                <input id="seconds" class="time-control" type="number" min=0  value="0" name="seconds">Seconds
+            </div>
+        </div>
+        <div class="buttons-container">
+            <button class="btn btn-outline-primary btn-start-resume">Start</button>
+            <button class="btn btn-outline-primary btn-pause">Pause</button>
+            <button class="btn btn-outline-primary btn-stop">Stop</button>
+        </div>
+    </div>
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>
