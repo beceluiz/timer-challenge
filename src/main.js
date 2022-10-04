@@ -13,10 +13,7 @@ let totalSecondsBackup = 0;
 init();
 
 function init() {
-  btnPause.style.display = "none";
-  btnStop.style.display = "none";
-
-  btnStart.addEventListener("click", () => {
+  const handleStart = () => {
     const hours = parseInt(hoursEl.value);
     const minutes = parseInt(minutesEl.value);
     const seconds = parseInt(secondsEl.value);
@@ -32,18 +29,16 @@ function init() {
     btnPause.style.display = "inline-block";
     btnStop.style.display = "inline-block";
     btnStart.style.display = "none";
-  });
-
-  btnPause.addEventListener("click", () => {
+  };
+  const handlePause = () => {
     pause = !pause;
     if (pause) {
       btnPause.innerText = "Resume";
     } else {
       btnPause.innerText = "Pause";
     }
-  });
-
-  btnStop.addEventListener("click", () => {
+  };
+  const handleStop = () => {
     stopTimer();
     totalSeconds = totalSecondsBackup;
     pause = false;
@@ -52,7 +47,16 @@ function init() {
     btnPause.style.display = "none";
     btnStop.style.display = "none";
     btnStart.style.display = "";
-  });
+  };
+
+  btnPause.style.display = "none";
+  btnStop.style.display = "none";
+
+  btnStart.addEventListener("click", handleStart);
+
+  btnPause.addEventListener("click", handlePause);
+
+  btnStop.addEventListener("click", handleStop);
 }
 
 function startTimer() {
