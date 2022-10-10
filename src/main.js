@@ -13,6 +13,9 @@ let totalSecondsBackup = 0;
 init();
 
 function init() {
+  btnPause.style.display = "none";
+  btnStop.style.display = "none";
+
   const handleStart = () => {
     const hours = parseInt(hoursEl.value);
     const minutes = parseInt(minutesEl.value);
@@ -48,9 +51,6 @@ function init() {
     btnStop.style.display = "none";
     btnStart.style.display = "";
   };
-
-  btnPause.style.display = "none";
-  btnStop.style.display = "none";
 
   btnStart.addEventListener("click", handleStart);
 
