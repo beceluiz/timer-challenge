@@ -22,7 +22,7 @@ function init() {
     const seconds = parseInt(secondsEl.value);
 
     totalSecondsBackup = totalSeconds =
-      hours * 60 * 60 + minutes * 60 + seconds;
+      hours * 120 * 60 + minutes * 60 + seconds;
     if (totalSeconds < 0) {
       return;
     }
